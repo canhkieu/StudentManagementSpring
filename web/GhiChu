@@ -1,0 +1,30 @@
+Các bước tạo Prject Spring và cấu hình 
+
+1. New Project/ Java Web / Web Application
+2. Chọn Server: Tomcat 8.0
+3. Nhấn F6 để chạy thử.
+
+4. Thiết lập cấu hình
+    Mở file dispatcher-servlet.xml
+        Tìm dòng: xmlns="http://www.springframework.org/schema/beans"
+        Thêm vào bên dưới nó
+            xmlns:context="http://www.springframework.org/schema/context"
+            xmlns:mvc="http://www.springframework.org/schema/mvc"
+        Tìm xsi:schemaLocation
+        Thêm vào bên trong cặp dấu ""
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-4.0.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        Tìm </beans>
+        Thêm vào "trước" khi kết thúc thẻ
+            <context:component-scan base-package="Controllers" />
+            <mvc:annotation-driven />
+
+TẠO CONTROLLERS
+
+    Thêm 2 thư mục mới vào trong Source Packages
+        Controllers
+        Model
+    Tạo file JavaClass tên: HomeController trong thư mục Controllers
+    Mở file HomeController xem.
